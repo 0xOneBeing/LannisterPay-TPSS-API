@@ -18,7 +18,7 @@ Your API service should expose a single HTTP POST endpoint /split-payments/compu
 
 **Sample Payload:**:
 
-    ```{```
+    {
         "ID": 1308,
         "Amount": 12580,
         "Currency": "NGN",
@@ -40,7 +40,7 @@ Your API service should expose a single HTTP POST endpoint /split-payments/compu
                 "SplitEntityId": "LNPYACC0015"
             }
         ]
-    ```}```
+    }
 
 If your computation is successful, your endpoint should return with the 200 0K HTTP code and a single object containing the following fields:
 
@@ -52,24 +52,24 @@ If your computation is successful, your endpoint should return with the 200 0K H
 
 Sample Response:
 
-{
-    "ID": 1308,
-    "Balance": 0,
-    "SplitBreakdown": [
-        {
-            "SplitEntityId": "LNPYACC0019",
-            "Amount": 5000
-        },
-        {
-            "SplitEntityId": "LNPYACC0011",
-            "Amount": 2000
-        },
-        {
-            "SplitEntityId": "LNPYACC0015",
-            "Amount": 2000
-        }
-    ]
-}
+    {
+        "ID": 1308,
+        "Balance": 0,
+        "SplitBreakdown": [
+            {
+                "SplitEntityId": "LNPYACC0019",
+                "Amount": 5000
+            },
+            {
+                "SplitEntityId": "LNPYACC0011",
+                "Amount": 2000
+            },
+            {
+                "SplitEntityId": "LNPYACC0015",
+                "Amount": 2000
+            }
+        ]
+    }
 
 ## Requirement II (Split computation rules)
 
@@ -79,24 +79,25 @@ The SplitBreakdown should be computed using the following rules:
 
 Each split calculation should be based on the Balance after the previous calculation's done. At the start of your split calculation, your Balance should be same as the transaction Amount. It then subsequently decreases by the value of the split amount computed for each item in the SplitInfo array. What this means is, if you have an example request like the below:
 
-{
-    "ID": 13082,
-    "Amount": 4500,
-    "Currency": "NGN",
-    "CustomerEmail": "anon8@customers.io",
-    "SplitInfo": [
-        {
-            "SplitType": "FLAT",
-            "SplitValue": 450,
-            "SplitEntityId": "LNPYACC0019"
-        },
-        {
-            "SplitType": "FLAT",
-            "SplitValue": 2300,
-            "SplitEntityId": "LNPYACC0011"
-        }
-    ]
-}
+    {
+        "ID": 13082,
+        "Amount": 4500,
+        "Currency": "NGN",
+        "CustomerEmail": "anon8@customers.io",
+        "SplitInfo": [
+            {
+                "SplitType": "FLAT",
+                "SplitValue": 450,
+                "SplitEntityId": "LNPYACC0019"
+            },
+            {
+                "SplitType": "FLAT",
+                "SplitValue": 2300,
+                "SplitEntityId": "LNPYACC0011"
+            }
+        ]
+    }
+
 Your computation Balance progression should look something like this:
 
 Initial Balance: 
@@ -113,20 +114,20 @@ Balance after split calculation for "LNPYACC0011": (4050 - 2300)
 Final Balance: 1750
 The sample JSON response for the above:
 
-{
-    "ID": 13082,
-    "Balance": 1750,
-    "SplitBreakdown": [
-        {
-            "SplitEntityId": "LNPYACC0019",
-            "Amount": 450
-        },
-        {
-            "SplitEntityId": "LNPYACC0011",
-            "Amount": 2300
-        }
-    ]
-}
+    {
+        "ID": 13082,
+        "Balance": 1750,
+        "SplitBreakdown": [
+            {
+                "SplitEntityId": "LNPYACC0019",
+                "Amount": 450
+            },
+            {
+                "SplitEntityId": "LNPYACC0011",
+                "Amount": 2300
+            }
+        ]
+    }
 
 **= Rule 2 =**
 
@@ -138,44 +139,44 @@ The order of precedence for the SplitType is:
 
 What the above means is, if you have an example request like the below:
 
-{
-    "ID": 13092,
-    "Amount": 4500,
-    "Currency": "NGN",
-    "CustomerEmail": "anon8@customers.io",
-    "SplitInfo": [
-        {
-            "SplitType": "FLAT",
-            "SplitValue": 450,
-            "SplitEntityId": "LNPYACC0019"
-        },
-        {
-            "SplitType": "RATIO",
-            "SplitValue": 3,
-            "SplitEntityId": "LNPYACC0011"
-        },
-        {
-            "SplitType": "PERCENTAGE",
-            "SplitValue": 3,
-            "SplitEntityId": "LNPYACC0015"
-        },
-        {
-            "SplitType": "RATIO",
-            "SplitValue": 2,
-            "SplitEntityId": "LNPYACC0016"
-        },
-        {
-            "SplitType": "FLAT",
-            "SplitValue": 2450,
-            "SplitEntityId": "LNPYACC0029"
-        },
-        {
-            "SplitType": "PERCENTAGE",
-            "SplitValue": 10,
-            "SplitEntityId": "LNPYACC0215"
-        },
-    ]
-}
+    {
+        "ID": 13092,
+        "Amount": 4500,
+        "Currency": "NGN",
+        "CustomerEmail": "anon8@customers.io",
+        "SplitInfo": [
+            {
+                "SplitType": "FLAT",
+                "SplitValue": 450,
+                "SplitEntityId": "LNPYACC0019"
+            },
+            {
+                "SplitType": "RATIO",
+                "SplitValue": 3,
+                "SplitEntityId": "LNPYACC0011"
+            },
+            {
+                "SplitType": "PERCENTAGE",
+                "SplitValue": 3,
+                "SplitEntityId": "LNPYACC0015"
+            },
+            {
+                "SplitType": "RATIO",
+                "SplitValue": 2,
+                "SplitEntityId": "LNPYACC0016"
+            },
+            {
+                "SplitType": "FLAT",
+                "SplitValue": 2450,
+                "SplitEntityId": "LNPYACC0029"
+            },
+            {
+                "SplitType": "PERCENTAGE",
+                "SplitValue": 10,
+                "SplitEntityId": "LNPYACC0215"
+            },
+        ]
+    }
 
 Your split amount computation should progress like this:
 
@@ -217,37 +218,37 @@ One other thing to note from the above, the Balance used to compute the split am
 
 The sample JSON response for the above:
 
-{
-    "ID": 13092,
-    "Balance": 0,
-    "SplitBreakdown": [
-        {
-            "SplitEntityId": "LNPYACC0019",
-            "Amount": 450
-        },
-        {
-            "SplitEntityId": "LNPYACC0011",
-            "Amount": 2450
-        },
-        {
-            "SplitEntityId": "LNPYACC0015",
-            "Amount": 48
-        },
-        {
-            "SplitEntityId": "LNPYACC0215",
-            "Amount": 155.2
-        },
-        {
-            "SplitEntityId": "LNPYACC0011",
-            "Amount": 838.08
-        },
-        {
-            "SplitEntityId": "LNPYACC0016",
-            "Amount": 558.72
-        }
+    {
+        "ID": 13092,
+        "Balance": 0,
+        "SplitBreakdown": [
+            {
+                "SplitEntityId": "LNPYACC0019",
+                "Amount": 450
+            },
+            {
+                "SplitEntityId": "LNPYACC0011",
+                "Amount": 2450
+            },
+            {
+                "SplitEntityId": "LNPYACC0015",
+                "Amount": 48
+            },
+            {
+                "SplitEntityId": "LNPYACC0215",
+                "Amount": 155.2
+            },
+            {
+                "SplitEntityId": "LNPYACC0011",
+                "Amount": 838.08
+            },
+            {
+                "SplitEntityId": "LNPYACC0016",
+                "Amount": 558.72
+            }
 
-    ]
-}
+        ]
+    }
 
 **Requirement III (Constraints)**
 
