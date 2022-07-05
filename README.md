@@ -16,31 +16,31 @@ Your API service should expose a single HTTP POST endpoint /split-payments/compu
     * SplitValue This is used together with the SplitType to determine the final value of the split amount for the entity. Example, a SplitType of FLAT and SplitValue of 45 means the split entity gets NGN 45. Another example, A SplitType of PERCENTAGE and SplitValue of 3 means the split entity gets 3 percent of the transaction amount or Balance. You can read more about split computation under the Requirement II (Split computation rules) section.
     * SplitEntityId This is the unique identifier for the split entity.
 
-**Sample Payload:**
+**Sample Payload:**:
 
-```{```
-    "ID": 1308,
-    "Amount": 12580,
-    "Currency": "NGN",
-    "CustomerEmail": "anon8@customers.io",
-    "SplitInfo": [
-        {
-            "SplitType": "FLAT",
-            "SplitValue": 45,
-            "SplitEntityId": "LNPYACC0019"
-        },
-        {
-            "SplitType": "RATIO",
-            "SplitValue": 3,
-            "SplitEntityId": "LNPYACC0011"
-        },
-        {
-            "SplitType": "PERCENTAGE",
-            "SplitValue": 3,
-            "SplitEntityId": "LNPYACC0015"
-        }
-    ]
-```}```
+    ```{```
+        "ID": 1308,
+        "Amount": 12580,
+        "Currency": "NGN",
+        "CustomerEmail": "anon8@customers.io",
+        "SplitInfo": [
+            {
+                "SplitType": "FLAT",
+                "SplitValue": 45,
+                "SplitEntityId": "LNPYACC0019"
+            },
+            {
+                "SplitType": "RATIO",
+                "SplitValue": 3,
+                "SplitEntityId": "LNPYACC0011"
+            },
+            {
+                "SplitType": "PERCENTAGE",
+                "SplitValue": 3,
+                "SplitEntityId": "LNPYACC0015"
+            }
+        ]
+    ```}```
 
 If your computation is successful, your endpoint should return with the 200 0K HTTP code and a single object containing the following fields:
 
