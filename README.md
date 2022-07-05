@@ -68,10 +68,12 @@ Sample Response:
         }
     ]
 }
-Requirement II (Split computation rules)
+
+## Requirement II (Split computation rules)
+
 The SplitBreakdown should be computed using the following rules:
 
-= Rule 1 =
+**= Rule 1 =**
 Each split calculation should be based on the Balance after the previous calculation's done. At the start of your split calculation, your Balance should be same as the transaction Amount. It then subsequently decreases by the value of the split amount computed for each item in the SplitInfo array. What this means is, if you have an example request like the below:
 
 {
@@ -122,7 +124,8 @@ The sample JSON response for the above:
         }
     ]
 }
-= Rule 2 =
+
+**= Rule 2 =**
 The order of precedence for the SplitType is:
 
 FLAT types should be computed before PERCENTAGE OR RATIO types
@@ -239,43 +242,45 @@ The sample JSON response for the above:
 
     ]
 }
-Requirement III (Constraints)
+
+**Requirement III (Constraints)**
 The SplitInfo array can contain a minimum of 1 split entity and a maximum of 20 entities.
 The final Balance value in your response cannot be lesser than 0.
 The split Amount value computed for each entity cannot be greater than the transaction Amount.
 The split Amount value computed for each entity cannot be lesser than 0.
 The sum of all split Amount values computed cannot be greated than the transaction Amount
 Your API service response time should not be more than 80ms (Milliseconds)
-Task Submission
+
+**Task Submission**
 Once done with your implementation, you can submit a link to your API using this [google forms link](https://docs.google.com/forms/d/e/1FAIpQLSfKMx_SyVNwWkZA43AQxjoJMsuTnBwoz4TCcwbBNNPDvmh_Ng/viewform "Title").
 
-FAQS
-#1
-Can I use typescript?
+## FAQS
+**#1**
+**Can I use typescript?**
 
 Yes, you can - Vanilla Javascript is preferred though.
 
-#2
-Am I allowed to use 3rd party frameworks and or libraries?
+**#2**
+**Am I allowed to use 3rd party frameworks and or libraries?**
 
 Yes, you can use any framework or library you want.
 
-#3
-Can I host my service using Heroku?
+**#3**
+**Can I host my service using Heroku?**
 
 Yes, you can use Heroku as the host of choice for your API. You can also use any accessible hosts you are comfortable with (Glitch, CodeSandbox, DigitalOcean, AWS, Google App Engine e.t.c.)
 
-#4
-How will this assessment be graded?
+**#4**
+**How will this assessment be graded?**
 
 The assessment will be graded using two criteria. First, the correctness of your response. Second, whether or not your API responded in less than 80ms. Each API URL will be tested with 20 different unique transaction objects. Total obtainable score is 40 points. (2 points per transaction object. First point for correctness in computing the split amounts and final balance. Second point for responding in less than 80ms)
 
-#5
-I want to use Heroku to host my API, won't this affect my response time seeing as the free version sleeps after a cerain idle time.
+**#5**
+**I want to use Heroku to host my API, won't this affect my response time seeing as the free version sleeps after a cerain idle time.**
 
 This will not be an issue. Each submitted API URL will be pinged with an initial wait time of 60 seconds before any tests are run.
 
-#6
-The split amount calculations could result in long decimal values, can I round up or set the values to 2 dp?
+**#6**
+**The split amount calculations could result in long decimal values, can I round up or set the values to 2 dp?**
 
 No, you cannot. Return the decimal values as computed - no approximations or formatting.
