@@ -261,7 +261,7 @@ The sample JSON response for the above:
 
 **Task Submission**
 
-Once done with your implementation, you can submit a link to your API using this [google forms link](https://docs.google.com/forms/d/e/1FAIpQLSfKMx_SyVNwWkZA43AQxjoJMsuTnBwoz4TCcwbBNNPDvmh_Ng/viewform "Title").
+Once done with your implementation, you can submit a link to your API using this [Google Forms link](https://docs.google.com/forms/d/e/1FAIpQLSfKMx_SyVNwWkZA43AQxjoJMsuTnBwoz4TCcwbBNNPDvmh_Ng/viewform "Google Forms submission link").
 
 ## FAQS
 **#1**
