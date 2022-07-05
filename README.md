@@ -100,18 +100,19 @@ Each split calculation should be based on the ```Balance``` after the previous c
 
 Your computation ```Balance``` progression should look something like this:
 
-Initial Balance: 
-4500
+    Initial Balance: 
+    4500
 
-Split amount for "LNPYACC0019": 450
-Balance after split calculation for "LNPYACC0019": (4500 - 450)
-4050
+    Split amount for "LNPYACC0019": 450
+    Balance after split calculation for "LNPYACC0019": (4500 - 450)
+    4050
 
-Split amount for "LNPYACC0011": 2300
-Balance after split calculation for "LNPYACC0011": (4050 - 2300)
-1750
+    Split amount for "LNPYACC0011": 2300
+    Balance after split calculation for "LNPYACC0011": (4050 - 2300)
+    1750
 
-Final Balance: 1750
+    Final Balance: 1750
+
 The sample JSON response for the above:
 
     {
