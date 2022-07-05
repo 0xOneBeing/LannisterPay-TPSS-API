@@ -18,7 +18,7 @@ Your API service should expose a single HTTP POST endpoint /split-payments/compu
 
 **Sample Payload:**
 
-{
+```{```
     "ID": 1308,
     "Amount": 12580,
     "Currency": "NGN",
@@ -40,7 +40,8 @@ Your API service should expose a single HTTP POST endpoint /split-payments/compu
             "SplitEntityId": "LNPYACC0015"
         }
     ]
-}
+```}```
+
 If your computation is successful, your endpoint should return with the 200 0K HTTP code and a single object containing the following fields:
 
 * ID The unique id of the transaction. This should be the same type and value as the ID value of the transaction object that was passed in the request.
