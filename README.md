@@ -1,3 +1,15 @@
+<span style="text-decoration: underline;">Table of Content</span>
+1. [LannisterPay (TPSS)](#lannisterpay-tpss "LannisterPay (TPSS)")
+2. [Requirement I (Endpoint)](#requirement-I "Requirement I (Endpoint)")
+3. [Requirement II (Split computation rules)](#requirement-II "Requirement II (Split computation rules)")
+4. [Requirement III (Constraints)](#requirement-III "Requirement III (Constraints)")
+5. [Task Submission](#task-submission "Task Submission")
+6. [FAQS](#faqs "FAQS")
+
+***
+***
+***
+
 # LannisterPay (TPSS)
 
 LannisterPay has reached out to you to help implement a transaction payment splitting service (TPSS). The service is meant to calculate the amount due to one or more split payment "entities" as well as the amount left after all splits have been computed.
