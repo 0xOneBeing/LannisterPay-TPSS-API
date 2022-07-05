@@ -1,4 +1,4 @@
-<span style="text-decoration: underline;">Table of Content</span>
+**TABLE OF CONTENT**
 1. [LannisterPay (TPSS)](#lannisterpay-tpss "LannisterPay (TPSS)")
 2. [Requirement I (Endpoint)](#requirement-I "Requirement I (Endpoint)")
 3. [Requirement II (Split computation rules)](#requirement-II "Requirement II (Split computation rules)")
@@ -10,13 +10,13 @@
 ***
 ***
 
-# LannisterPay (TPSS)
+# <span id="lannister-pay">LannisterPay (TPSS)</span>
 
 LannisterPay has reached out to you to help implement a transaction payment splitting service (TPSS). The service is meant to calculate the amount due to one or more split payment "entities" as well as the amount left after all splits have been computed.
 
 Your task for this assessment is to create a NodeJS API service that implements the TPSS requirements shared by LannisterPay as described below.
 
-## Requirement I (Endpoint)
+## <span id="requirement-I">Requirement I (Endpoint)</span>
 Your API service should expose a single ```HTTP POST``` endpoint ```/split-payments/compute``` that accepts a transaction object with the following properties:
 
 * ```ID``` Unique numeric ID of the transaction
@@ -83,7 +83,7 @@ Sample Response:
         ]
     }
 
-## Requirement II (Split computation rules)
+## <span id="requirement-II">Requirement II (Split computation rules)</span>
 
 The ```SplitBreakdown``` should be computed using the following rules:
 
@@ -264,7 +264,7 @@ The sample JSON response for the above:
         ]
     }
 
-**Requirement III (Constraints)**
+## <span id="requirement-III">Requirement III (Constraints)</span>
 
 1. The ```SplitInfo``` array can contain a minimum of 1 split entity and a maximum of 20 entities.
 2. The final ```Balance``` value in your response cannot be lesser than 0.
@@ -273,11 +273,12 @@ The sample JSON response for the above:
 5. The sum of all split Amount values computed cannot be greated than the transaction ```Amount```.
 6. Your API service response time should not be more than 80ms (Milliseconds).
 
-**Task Submission**
+## <span id="task-submission">Task Submission</span>
 
 Once done with your implementation, you can submit a link to your API using this [Google Forms link](https://docs.google.com/forms/d/e/1FAIpQLSfKMx_SyVNwWkZA43AQxjoJMsuTnBwoz4TCcwbBNNPDvmh_Ng/viewform "Google Forms submission link").
 
-## FAQS
+## <span id="faqs">FAQS</span>
+
 **#1**
 **Can I use typescript?**
 
