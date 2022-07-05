@@ -7,9 +7,9 @@ Your task for this assessment is to create a NodeJS API service that implements 
 ## Requirement I (Endpoint)
 Your API service should expose a single HTTP POST endpoint /split-payments/compute that accepts a transaction object with the following properties:
 
-* ID Unique numeric ID of the transaction
-* Amount Amount to be splitted between the split entities defined in the SplitInfo array (see below)
-* Currency The currency of the transaction
+* ==ID== Unique numeric ID of the transaction
+* <mark>Amount</mark> Amount to be splitted between the split entities defined in the SplitInfo array (see below)
+* ```Currency``` The currency of the transaction
 * CustomerEmail Email address of the transaction customer
 * SplitInfo An array of split entity objects. Each object conatins the fields below:
     * SplitType This defines how the split amount for the entity is calculated. It has 3 possible values, "FLAT", "PERCENTAGE" AND "RATIO"
