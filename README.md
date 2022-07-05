@@ -269,25 +269,30 @@ Once done with your implementation, you can submit a link to your API using this
 
 *Yes, you can - Vanilla Javascript is preferred though.*
 
+
 **#2**
 **Am I allowed to use 3rd party frameworks and or libraries?**
 
 *Yes, you can use any framework or library you want.*
+
 
 **#3**
 **Can I host my service using Heroku?**
 
 *Yes, you can use Heroku as the host of choice for your API. You can also use any accessible hosts you are comfortable with (Glitch, CodeSandbox, DigitalOcean, AWS, Google App Engine e.t.c.)*
 
+
 **#4**
 **How will this assessment be graded?**
 
 *The assessment will be graded using two criteria. First, the correctness of your response. Second, whether or not your API responded in less than 80ms. Each API URL will be tested with 20 different unique transaction objects. Total obtainable score is 40 points. (2 points per transaction object. First point for correctness in computing the split amounts and final balance. Second point for responding in less than 80ms)*
 
+
 **#5**
 **I want to use Heroku to host my API, won't this affect my response time seeing as the free version sleeps after a cerain idle time.**
 
 *This will not be an issue. Each submitted API URL will be pinged with an initial wait time of 60 seconds before any tests are run.*
+
 
 **#6**
 **The split amount calculations could result in long decimal values, can I round up or set the values to 2 dp?**
